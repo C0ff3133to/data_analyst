@@ -1,0 +1,37 @@
+Amazon Product Web Scraper
+
+Project Description:
+I built a program that automatically collects information from Amazon product pages. 
+The goal was to extract key details such as the product name, price, rating, and number of customer reviews.
+
+What the program does:
+- Finds and extracts the full product title
+- Retrieves the current price including currency (e.g. EUR 92.04)
+- Collects the star rating (e.g. 5.0) and how many people have reviewed the product
+- Saves all the information neatly into a CSV file in my Downloads folder
+- If the price drops below 70 euro, it'll send me a customized email as an alert
+
+Technologies Used: Python in Jupyter Notebook, BeautifulSoup, Requests, Regex, CSV, Web Scraping, Data Extraction
+
+Key Skills Demonstrated:
+- Ability to work with real websites that frequently change their layout
+- Problem-solving when facing technical challenges (such as Amazon’s security measures)
+- Writing clean and reliable code that produces useful results
+- Automatically exporting data to a spreadsheet file for easy use
+
+Outcome:
+The program successfully gathers accurate product information from Amazon and saves it in an organized file. 
+
+This project shows my ability to:
+- Turn a real-world idea into a working solution
+- Handle unexpected difficulties and find smart solutions
+- Deliver practical tools that can be useful in a business setting
+- How to automate a project with valuable and actionable data for real life usage
+
+I am particularly proud of how I managed to make the scraper stable even when Amazon updates their website structure.
+
+Tools used: Python in Jupyter Notebook, BeautifulSoup, Requests, Regex, CSV, Web Scraping, Data Extraction
+----------------------------------------
+This project highlights my practical Python skills, attention to detail, and determination to complete tasks. 
+Qualities I bring to every project I work on, so if you like what you see, please contact me on the following page:
+https://www.linkedin.com/in/christopher-wijk-karlsson/
