@@ -1,0 +1,93 @@
+Automated Cryptocurrency Market Data Tracker & Analyzer
+
+Project Overview
+
+This project demonstrates the development of a robust, automated data pipeline that extracts real-time cryptocurrency market data from the CoinMarketCap API, stores it persistently, performs exploratory analysis, and visualizes price movements over time.
+The solution showcases core Data Analyst skills: API integration, data ingestion & automation, data cleaning, transformation, time-series handling, and insight generation — all essential for roles involving market intelligence, financial analytics, or business intelligence.
+Live Demo / Repository Ready: The notebook serves as both the pipeline and analysis dashboard.
+
+My Curiosity
+
+I've always been into finance and the stock market but I've never really been invested into the crypto market.
+Therefor I wanted to dig myself deep into the jungle to get more experienced where the pricing don't have a opening or close.
+
+Business Objective
+Track the top 20 cryptocurrencies by market cap every minute, build a historical dataset, and analyze performance trends (1h, 24h, 7d, 30d, etc.) to identify momentum shifts and market leaders.
+
+Key Features
+- Automated API data fetching with error handling
+- Incremental data appending to CSV
+- Time-stamped historical tracking
+- Performance metric aggregation and comparison
+- Exploratory visualizations
+- Clean, reproducible Python code
+
+Technologies & Tools Used
+- Python (pandas, requests, json, seaborn, matplotlib)
+- CoinMarketCap Pro API
+- Jupyter Notebook for transparent workflow
+- CSV for persistent storage (easily scalable to SQL/PostgreSQL)
+- Data manipulation & visualization best practices
+
+Project Architecture & Walkthrough
+
+1. Data Extraction (api_runner() function)
+- Connects to https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest
+- Pulls top 20 coins in USD
+- Includes comprehensive metadata: price, market cap, volume, circulating supply, and percentage changes across multiple timeframes
+- Robust error handling for connection issues, timeouts, and rate limits
+- Adds timestamp for each batch
+
+2. Data Storage & Automation
+- Initializes an empty DataFrame
+- Uses pd.concat() for modern, efficient appending
+- Saves/appends to API.csv with proper header logic
+- Scheduled loop (5 iterations × 60 seconds in demo) — easily extendable to production scheduler (Airflow, cron, Prefect, etc.)
+
+3. Data Exploration & Analysis
+- Loaded 100 records (5 runs × 20 coins)
+- Aggregated average percentage changes by coin across all timeframes
+- Stacked format for easy comparison and further modeling
+- Filtered view of key metrics (price, market cap, volume, etc.)
+
+4. Visualization
+- Time-series line plot showing price evolution for tracked assets
+- Professional darkgrid styling with seaborn
+- Ready for expansion into interactive dashboards (Plotly, Tableau, Power BI)
+
+Key Insights (from sample run – July 2026)
+- Bitcoin maintained dominance (~58.9% market cap) with moderate 7-day gains.
+- Ethereum showed stronger short-term momentum.
+- Monero and Zcash exhibited notable volatility and positive 7d/30d performance.
+- Stablecoins (USDT, USDC, DAI) remained pegged as expected.
+- Emerging assets like Hyperliquid and Canton showed significant longer-term variance.
+
+These insights demonstrate the ability to quickly surface actionable market intelligence from raw API data.
+
+Technical Highlights
+- Production-minded code: Proper session handling, exception management, and incremental loading.
+- Scalability awareness: CSV foundation but structured for migration to a database.
+- Clean & readable: Well-commented functions and logical workflow.
+- Modern pandas practices (pd.concat instead of deprecated append).
+- Reproducibility: Everything runs end-to-end in one notebook.
+
+Challenges & Learnings
+- Handled API rate limits and authentication securely (note: API key should be moved to environment variables in production).
+- Managed nested JSON structure using pd.json_normalize().
+- Ensured timestamp consistency across batches for accurate time-series analysis.
+- Learned the importance of data lineage and auditability in financial/crypto data.
+
+Future Enhancements (Shows Forward Thinking)
+- Migrate storage to PostgreSQL / DuckDB with proper schema
+- Add automated alerting for significant price movements
+- Deploy as a Streamlit or Dash dashboard
+- Implement unit tests and logging
+- Expand to more coins or additional data sources (Binance, Coingecko)
+- Add forecasting models (Prophet, LSTM) for trend prediction
+
+Conclusion
+This project showcases a complete ETL + Analytics workflow — from raw API ingestion to insight generation. It highlights my ability to build automated, reliable data solutions that deliver business value in fast-moving environments like cryptocurrency markets.
+The code is clean, well-documented, and ready for production scaling. It reflects the exact skill set required for a Data Analyst role: technical proficiency, analytical thinking, and the ability to turn data into actionable intelligence.
+
+If you like the project, please feel free to contact me on:
+https://www.linkedin.com/in/christopher-wijk-karlsson/
